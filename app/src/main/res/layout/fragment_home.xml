@@ -1,0 +1,810 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:fitsSystemWindows="true">
+
+    <!-- ScrollView for the rest of the content -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/_16sdp">
+
+            <!-- Top Bar (Outside ScrollView as it should be fixed) -->
+            <LinearLayout
+                android:id="@+id/topBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:paddingVertical="@dimen/_8sdp">
+
+                <!-- Online Status -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical">
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/onlineSwitch"
+                        style="@style/IOSSwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="32dp"
+                        android:checked="true" />
+
+                    <TextView
+                        android:id="@+id/tvOnlineOffline"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:text="@string/you_re_online"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/font_14sp" />
+                </LinearLayout>
+
+                <!-- Calendar Icon -->
+                <ImageView
+                    android:id="@+id/calendarIcon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:contentDescription="@string/calendar"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:padding="@dimen/_5sdp"
+                    android:src="@drawable/ic_calendar" />
+            </LinearLayout>
+
+
+            <!-- Date Selector -->
+            <LinearLayout
+                android:id="@+id/dateSelector"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/topBar"
+                android:layout_marginHorizontal="@dimen/_6sdp"
+                android:orientation="horizontal"
+                android:weightSum="7">
+
+                <!-- SAT -->
+                <LinearLayout
+                    android:id="@+id/dateSat"
+                    style="@style/DateItemContainer"
+                    android:layout_marginStart="0dp">
+
+                    <TextView
+                        style="@style/DateDayText"
+                        android:text="SAT" />
+
+                    <TextView
+                        style="@style/DateNumberText"
+                        android:text="11" />
+                </LinearLayout>
+
+                <!-- SUN -->
+                <LinearLayout
+                    android:id="@+id/dateSun"
+                    style="@style/DateItemContainer"
+                    android:layout_marginStart="@dimen/_4sdp">
+
+                    <TextView
+                        style="@style/DateDayText"
+                        android:text="SUN" />
+
+                    <TextView
+                        style="@style/DateNumberText"
+                        android:text="12" />
+                </LinearLayout>
+
+                <!-- MON -->
+                <LinearLayout
+                    android:id="@+id/dateMon"
+                    style="@style/DateItemContainer"
+                    android:layout_marginStart="@dimen/_4sdp">
+
+                    <TextView
+                        style="@style/DateDayText"
+                        android:text="MON" />
+
+                    <TextView
+                        style="@style/DateNumberText"
+                        android:text="13" />
+                </LinearLayout>
+
+                <!-- TUE -->
+                <LinearLayout
+                    android:id="@+id/dateTue"
+                    style="@style/DateItemContainer"
+                    android:layout_marginStart="@dimen/_4sdp">
+
+                    <TextView
+                        style="@style/DateDayText"
+                        android:text="TUE" />
+
+                    <TextView
+                        style="@style/DateNumberText"
+                        android:text="14" />
+                </LinearLayout>
+
+                <!-- WED -->
+                <LinearLayout
+                    android:id="@+id/dateWed"
+                    style="@style/DateItemContainer"
+                    android:layout_marginStart="@dimen/_4sdp">
+
+                    <TextView
+                        style="@style/DateDayText"
+                        android:text="WED" />
+
+                    <TextView
+                        style="@style/DateNumberText"
+                        android:text="15" />
+                </LinearLayout>
+
+                <!-- THU -->
+                <LinearLayout
+                    android:id="@+id/dateThu"
+                    style="@style/DateItemContainer.Selected"
+                    android:layout_marginStart="@dimen/_4sdp">
+
+                    <TextView
+                        style="@style/DateDayText.Selected"
+                        android:text="THU" />
+
+                    <TextView
+                        style="@style/DateNumberText.Selected"
+                        android:text="16" />
+                </LinearLayout>
+
+                <!-- FRI -->
+                <LinearLayout
+                    android:id="@+id/dateFri"
+                    style="@style/DateItemContainer"
+                    android:layout_marginStart="@dimen/_4sdp">
+
+                    <TextView
+                        style="@style/DateDayText"
+                        android:text="FRI" />
+
+                    <TextView
+                        style="@style/DateNumberText"
+                        android:text="17" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Total Orders Section -->
+            <LinearLayout
+                android:id="@+id/totalOrdersSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/dateSelector"
+                android:layout_marginHorizontal="@dimen/_6sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:background="@drawable/orders_background"
+                android:orientation="vertical">
+
+                <!-- Order Title -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_box" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:text="Total Orders (19)"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/font_16sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginHorizontal="@dimen/_12sdp"
+                    android:layout_marginVertical="@dimen/_6sdp"
+                    android:background="@color/horizontal_line" />
+
+                <!-- Progress Bar Container -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+
+                    android:orientation="vertical">
+
+                    <!-- Progress Bar -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!-- Pending -->
+                        <FrameLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="10"
+                            android:background="@drawable/progress_pending">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:text="10"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/font_10sp"
+                                android:textStyle="bold" />
+                        </FrameLayout>
+
+                        <!-- In Progress -->
+                        <FrameLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="4"
+                            android:background="@drawable/progress_in_progress">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="4"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/font_10sp"
+                                android:textStyle="bold" />
+                        </FrameLayout>
+
+                        <!-- Delivered -->
+                        <FrameLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:background="@drawable/progress_delivered">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="2"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/font_10sp"
+                                android:textStyle="bold" />
+                        </FrameLayout>
+
+                        <!-- Cancelled -->
+                        <FrameLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="3"
+                            android:background="@drawable/progress_cancelled">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="3"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/font_10sp"
+                                android:textStyle="bold" />
+                        </FrameLayout>
+                    </LinearLayout>
+
+                    <!-- Status Labels -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_12sdp"
+                        android:orientation="horizontal">
+
+                        <!-- Pending -->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical">
+
+                            <View
+                                android:layout_width="8dp"
+                                android:layout_height="8dp"
+                                android:background="@drawable/dot_pending" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="4dp"
+                                android:text="@string/pending"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="@dimen/font_12sp" />
+
+                        </LinearLayout>
+
+                        <!-- In-Progress -->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:gravity="center_vertical">
+
+                            <View
+                                android:layout_width="8dp"
+                                android:layout_height="8dp"
+                                android:background="@drawable/dot_in_progress" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="4dp"
+                                android:text="@string/in_progress_c"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="@dimen/font_12sp" />
+                        </LinearLayout>
+
+                        <!-- Delivered -->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:gravity="center_vertical">
+
+                            <View
+                                android:layout_width="8dp"
+                                android:layout_height="8dp"
+                                android:background="@drawable/dot_delivered" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="4dp"
+                                android:text="@string/delivered"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="@dimen/font_12sp" />
+
+                        </LinearLayout>
+
+                        <!-- Cancelled -->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:gravity="center_vertical">
+
+                            <View
+                                android:layout_width="8dp"
+                                android:layout_height="8dp"
+                                android:background="@drawable/dot_cancelled" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="4dp"
+                                android:text="@string/cancelled"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="@dimen/font_12sp" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Blocked Message -->
+            <LinearLayout
+                android:id="@+id/blockedMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/totalOrdersSection"
+                android:layout_marginHorizontal="@dimen/_6sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:background="@drawable/blocked_message_background"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/_8sdp"
+                android:paddingVertical="@dimen/_8sdp">
+
+                <TextView
+                    android:id="@+id/tvBlockedMessage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="3dp"
+                    android:text="@string/you_are_blocked"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_14sp" />
+
+            </LinearLayout>
+
+            <!-- Map Container -->
+            <LinearLayout
+                android:id="@+id/mapContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/blockedMessage"
+                android:layout_marginHorizontal="@dimen/_6sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:background="@drawable/map_background"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <!-- Map View -->
+                <fragment
+                    android:id="@+id/map"
+                    android:name="com.google.android.gms.maps.SupportMapFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="400dp" />
+
+                <!-- Delivery Info -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_12sdp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tracy Williams"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/font_16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:text="1725 Pure Springs Blvd., Pickering, ON L1X 0C4"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="@dimen/font_14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:text="In-progress"
+                        android:textColor="#F57546"
+                        android:textSize="@dimen/font_14sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Current Delivery -->
+            <LinearLayout
+                android:id="@+id/currentDelivery"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/mapContainer"
+                android:layout_marginHorizontal="@dimen/_6sdp"
+                android:layout_marginVertical="@dimen/_8sdp"
+                android:background="@drawable/current_delivery_background"
+                android:orientation="vertical"
+                android:padding="@dimen/_12sdp">
+
+                <!-- Header -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Current Delivery"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/font_16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Receipt: #123456890"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="@dimen/font_14sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginVertical="@dimen/_5sdp"
+                    android:background="@color/horizontal_line" />
+                <!-- Progress Section -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <!-- Progress Line -->
+                        <View
+                            android:layout_width="@dimen/line_width"
+                            android:layout_height="2dp"
+                            android:layout_centerVertical="true"
+                            android:background="#006CFA" />
+
+                        <!-- Dotted Line -->
+                        <ImageView
+                            android:id="@+id/ivDottedLine"
+                            android:layout_width="match_parent"
+                            android:layout_height="5dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/line_width"
+                            android:layerType="software"
+                            android:src="@drawable/dotted_line" />
+
+                        <!-- Progress Points -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="@dimen/_20sdp"
+                                android:layout_height="@dimen/_20sdp"
+                                android:src="@drawable/ic_box_tick" />
+
+                            <!-- ETA Points -->
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <RelativeLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <ImageView
+                                        android:id="@+id/firstDot"
+                                        android:layout_width="@dimen/_5sdp"
+                                        android:layout_height="@dimen/_5sdp"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_marginTop="13dp"
+                                        android:src="@drawable/dot_pending" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/firstDot"
+                                        android:text="ETA 5m"
+                                        android:textColor="#006CFA"
+                                        android:textSize="@dimen/_8sdp"
+                                        app:drawableTopCompat="@drawable/dot_pending" />
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="100dp">
+
+                                    <ImageView
+                                        android:id="@+id/secondDot"
+                                        android:layout_width="@dimen/_5sdp"
+                                        android:layout_height="@dimen/_5sdp"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_marginTop="13dp"
+                                        android:src="@drawable/dot_pending" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/secondDot"
+                                        android:text="ETA 3m"
+                                        android:textColor="#006CFA"
+                                        android:textSize="@dimen/_8sdp"
+                                        app:drawableTopCompat="@drawable/dot_pending" />
+                                </RelativeLayout>
+
+                            </LinearLayout>
+
+                            <!-- Circular Progress Indicator -->
+                            <ImageView
+                                android:id="@+id/ivCircularSuccess"
+                                android:layout_width="@dimen/_20sdp"
+                                android:layout_height="@dimen/_20sdp"
+                                android:background="@drawable/dot_white"
+                                android:padding="@dimen/_3sdp"
+                                android:src="@drawable/ic_success"
+                                app:tint="@color/black" />
+
+                            <ImageView
+                                android:id="@+id/ivCircularCancelled"
+                                android:layout_width="@dimen/_20sdp"
+                                android:layout_height="@dimen/_20sdp"
+                                android:background="@drawable/dot_cancelled"
+                                android:padding="@dimen/_3sdp"
+                                android:src="@drawable/ic_cancel"
+                                android:visibility="gone"
+                                app:tint="@color/white" />
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                    <!-- Status Labels -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/in_progress"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/font_12sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="01 Jan, 2025 - 12:24 PM"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="@dimen/font_12sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Oshawa, ON"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/font_13sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_weight="1" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="end"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvStatusName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/delivered"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/font_12sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="15 Jan, 2025 - 06:11 PM"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="@dimen/font_12sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Pickering, ON"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/font_13sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginVertical="@dimen/_5sdp"
+                    android:background="@color/horizontal_line" />
+                <!-- Address -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/address_1725"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_14sp"
+                    android:textStyle="bold" />
+
+                <!-- Action Buttons -->
+                <LinearLayout
+                    android:id="@+id/actionLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnCancelDelivered"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/red_button"
+                        android:text="@string/cancel_delivery"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/font_14sp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnMarkAsDelivery"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/blue_button"
+                        android:text="@string/mark_as_delivered"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/font_14sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Search Section -->
+            <LinearLayout
+                android:id="@+id/searchSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/currentDelivery"
+                android:layout_marginHorizontal="@dimen/_6sdp"
+                android:orientation="horizontal">
+
+                <!-- Search EditText -->
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/search_background"
+                    android:drawableStart="@drawable/ic_search"
+                    android:drawablePadding="@dimen/_6sdp"
+                    android:hint="Search Delivery"
+                    android:padding="@dimen/_10sdp"
+                    android:textColorHint="@color/text_secondary"
+                    android:textSize="@dimen/font_14sp" />
+
+                <!-- Filter Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnFilter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/blue_button"
+                    android:drawableEnd="@drawable/ic_filter"
+                    android:drawablePadding="@dimen/_4sdp"
+                    android:paddingHorizontal="@dimen/_12sdp"
+                    android:text="Filter"
+                    android:textAllCaps="false"
+                    android:textSize="@dimen/font_14sp" />
+
+            </LinearLayout>
+
+            <!-- After Search Section -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/searchSection"
+                android:layout_marginHorizontal="@dimen/_6sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_16sdp" />
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>

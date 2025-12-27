@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:paddingTop="@dimen/_16sdp"
+    android:orientation="vertical">
+
+    <!-- Profile Section with Back Button -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:src="@drawable/ic_back" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/_12sdp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivProfilePic"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_100sdp"
+                android:src="@drawable/profile_male_1" />
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:text="Dispatcher 123"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_16sdp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+1 23456 89504"
+                android:textColor="@color/text_secondary"
+                android:textSize="@dimen/_12sdp" />
+
+            <TextView
+                android:id="@+id/tvLastSeen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:text="Last seen 10:11 AM 12 Dec, 2024"
+                android:textColor="@color/text_secondary"
+                android:textSize="@dimen/_10sdp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <!-- Action Buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/_8sdp">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider" />
+        <!-- Clear Chat Button -->
+        <TextView
+            android:id="@+id/tvClearChat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:paddingHorizontal="@dimen/_16sdp"
+            android:paddingVertical="@dimen/_12sdp"
+            android:text="Clear Chat"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_13sdp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider" />
+
+        <!-- Delete Chat Button -->
+        <TextView
+            android:id="@+id/tvDeleteChat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:paddingHorizontal="@dimen/_16sdp"
+            android:paddingVertical="@dimen/_12sdp"
+            android:text="Delete Chat"
+            android:textColor="@color/red_button"
+            android:textSize="@dimen/_13sdp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider" />
+    </LinearLayout>
+
+</LinearLayout> 

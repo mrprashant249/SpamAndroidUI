@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:paddingTop="@dimen/_16sdp"
+    android:orientation="vertical">
+
+    <!-- ScrollView for the rest of the content -->
+    <androidx.core.widget.NestedScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_8sdp"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/_16sdp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="History"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_24sdp"
+                android:textStyle="bold" />
+
+            <!-- Date Range Selection -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="From"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_14sdp" />
+
+                    <EditText
+                        android:id="@+id/etFrom"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:background="@drawable/edit_text_background"
+                        android:hint="25/12/2024"
+                        android:padding="@dimen/_10sdp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_14sdp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="To"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_14sdp" />
+
+                    <EditText
+                        android:id="@+id/etTo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:background="@drawable/edit_text_background"
+                        android:hint="10/01/2025"
+                        android:padding="@dimen/_10sdp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_14sdp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Statistics Grid -->
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:columnCount="2">
+
+                <!-- Total Deliveries -->
+                <LinearLayout style="@style/StatsItemContainer">
+
+                    <TextView
+                        style="@style/StatsLabel"
+                        android:text="Total Deliveries" />
+
+                    <TextView
+                        style="@style/StatsValue"
+                        android:text="398" />
+                </LinearLayout>
+
+                <!-- Total Receivable -->
+                <LinearLayout style="@style/StatsItemContainer">
+
+                    <TextView
+                        style="@style/StatsLabel"
+                        android:text="Total Receivable" />
+
+                    <TextView
+                        style="@style/StatsValue"
+                        android:text="$25000" />
+                </LinearLayout>
+
+                <!-- Pending Collection -->
+                <LinearLayout style="@style/StatsItemContainer">
+
+                    <TextView
+                        style="@style/StatsLabel"
+                        android:text="Pending Collection" />
+
+                    <TextView
+                        style="@style/StatsValue"
+                        android:text="$1400" />
+                </LinearLayout>
+
+                <!-- Online -->
+                <LinearLayout style="@style/StatsItemContainer">
+
+                    <TextView
+                        style="@style/StatsLabel"
+                        android:text="Online (In Hours)" />
+
+                    <TextView
+                        style="@style/StatsValue"
+                        android:text="112.5" />
+
+                </LinearLayout>
+
+                <!-- Offline -->
+                <LinearLayout style="@style/StatsItemContainer">
+
+                    <TextView
+                        style="@style/StatsLabel"
+                        android:text="Offline (In Hours)" />
+
+                    <TextView
+                        style="@style/StatsValue"
+                        android:text="30" />
+                </LinearLayout>
+
+                <!-- Total Delivered -->
+                <LinearLayout style="@style/StatsItemContainer">
+
+                    <TextView
+                        style="@style/StatsLabel"
+                        android:text="Total Delivered (In Grams)" />
+
+                    <TextView
+                        style="@style/StatsValue"
+                        android:text="1352.26" />
+                </LinearLayout>
+            </GridLayout>
+
+            <!-- Trends Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:text="Deliveries Trend"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_16sdp"
+                android:textStyle="bold" />
+
+            <!-- Bar Chart will be added here -->
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/deliveriesChart"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="@dimen/_4sdp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:text="Collection Trend"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_16sdp"
+                android:textStyle="bold" />
+
+            <!-- Bar Chart will be added here -->
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/collectionChart"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="@dimen/_4sdp" />
+
+            <!-- Search Box -->
+            <EditText
+                android:id="@+id/etSearch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:background="@drawable/search_layout_background"
+                android:drawableStart="@drawable/ic_search"
+                android:drawablePadding="@dimen/_8sdp"
+                android:hint="Search Order"
+                android:padding="@dimen/_10sdp"
+                android:textColorHint="@color/text_secondary"
+                android:textSize="@dimen/_12sdp" />
+
+            <!-- Orders List -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvOrders"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:nestedScrollingEnabled="false" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout> 

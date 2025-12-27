@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bottom_sheet_background"
+    android:orientation="vertical"
+    android:paddingHorizontal="@dimen/_16sdp"
+    android:paddingVertical="@dimen/_16sdp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Please Describe Reason to Cancel Delivery"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12sdp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/etReason"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:background="@drawable/edit_text_background"
+        android:gravity="top"
+        android:hint="Reason to cancel delivery"
+        android:minHeight="@dimen/_120sdp"
+        android:padding="@dimen/_12sdp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/text_secondary"
+        android:textSize="@dimen/_12sdp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCancelDelivery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:backgroundTint="@color/red_button"
+        android:gravity="center"
+        android:text="Cancel Delivery"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12sdp" />
+</LinearLayout> 

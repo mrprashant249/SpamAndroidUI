@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:fitsSystemWindows="true">
+
+    <View
+        android:id="@+id/backgroundTop"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_240sdp"
+        android:layout_alignParentTop="true"
+        android:background="@color/curve_light_blue_bg" />
+
+    <LinearLayout
+        android:id="@+id/logoContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_85sdp"
+        android:background="@drawable/logo_background"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:paddingTop="8dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="8dp">
+
+        <ImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_folder" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/app_name"
+            android:textColor="#000000"
+            android:textSize="@dimen/font_24sp"
+            android:textStyle="bold|italic" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="@dimen/_205sdp"
+        android:background="@drawable/round_curved_background" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/_240sdp"
+        android:background="@android:color/transparent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:paddingHorizontal="@dimen/_16sdp"
+        android:paddingTop="@dimen/_16sdp">
+
+        <!-- Success Icon -->
+        <ImageView
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_80sdp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_success" />
+
+        <!-- Success Message -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+            android:text="@string/your_request"
+            android:textColor="#000000"
+            android:textSize="@dimen/font_16sp"
+            android:textStyle="bold" />
+
+        <!-- Close Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnClose"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:backgroundTint="#1E1E1E"
+            android:text="@string/close_app"
+            android:textAllCaps="false"
+            android:textSize="@dimen/font_16sp" />
+
+        <!-- Remember Password Link -->
+
+        <TextView
+            android:id="@+id/tvBackToLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:background="@drawable/underline_text"
+            android:text="@string/back_to_login"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/font_14sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+</RelativeLayout>

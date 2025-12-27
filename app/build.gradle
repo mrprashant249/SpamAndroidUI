@@ -1,0 +1,71 @@
+plugins {
+    alias(libs.plugins.android.application)
+}
+
+android {
+    namespace 'com.bb.spamfolder'
+    compileSdkVersion 36
+
+    defaultConfig {
+        applicationId "com.bb.spamfolder"
+        minSdk 24
+        targetSdk 36
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures {
+        dataBinding true
+        buildConfig = true
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    sourceSets { main { assets.srcDirs = ['src/main/assets', 'src/main/res/assets/'] } }
+
+    bundle {
+        storeArchive {
+            enable = false
+        }
+    }
+
+    lint {
+        abortOnError false
+        checkReleaseBuilds false
+        ignoreWarnings true
+    }
+}
+
+dependencies {
+
+    implementation libs.appcompat
+    implementation libs.material
+    implementation 'com.intuit.sdp:sdp-android:1.1.0'
+    implementation 'com.google.android.gms:play-services-maps:18.2.0'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+    implementation 'com.google.errorprone:error_prone_annotations:2.23.0'
+
+
+    testImplementation libs.junit
+    androidTestImplementation libs.ext.junit
+    androidTestImplementation libs.espresso.core
+}

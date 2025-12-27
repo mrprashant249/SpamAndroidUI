@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingHorizontal="@dimen/_4sdp"
+    android:paddingVertical="@dimen/_2sdp">
+
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginVertical="@dimen/_8sdp"
+        android:background="@drawable/date_background"
+        android:paddingHorizontal="@dimen/_12sdp"
+        android:paddingVertical="@dimen/_4sdp"
+        android:text="31 Jan, 2024"
+        android:textColor="@color/text_secondary"
+        android:textSize="@dimen/_10sdp"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/chatLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_48sdp"
+        android:background="@drawable/chat_received_background"
+        android:orientation="vertical"
+        android:padding="@dimen/_8sdp">
+
+        <TextView
+            android:id="@+id/tvMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Let me know when you reach at block 225, street 2, dummy road, pickering"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp" />
+
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:text="9:29 am"
+            android:textColor="@color/text_secondary"
+            android:textSize="@dimen/_10sdp" />
+    </LinearLayout>
+</LinearLayout> 

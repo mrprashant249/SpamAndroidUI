@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">SpamFolder</string>
+    <string name="forget_password">Forget Password?</string>
+    <string name="password">Password</string>
+    <string name="_12345_67890">12345 67890</string>
+    <string name="login">Login</string>
+    <string name="_1">+1</string>
+    <string name="back_to_login">Back to login?</string>
+    <string name="close_app">Close App</string>
+    <string name="your_request">Your Request for New Credentials Submitted, one of the representative will contact you soon.</string>
+    <string name="you_re_online">You\'re Online</string>
+    <string name="you_re_offline">You\'re Offline</string>
+    <string name="calendar">Calendar</string>
+    <string name="you_are_blocked">You\'re Blocked: You Marked Delivery #123456778 Improperly, Please fill-in info properly to continuing on other Deliveries.</string>
+    <string name="cancel_delivery">Cancel Delivery</string>
+    <string name="mark_as_delivered">Mark as Delivered</string>
+    <string name="address_1725">1725 Pure Springs Blvd., Pickering, ON L1X 0C4, Canada</string>
+    <string name="msg_empty">Please fill in all fields</string>
+<!--    <string name=""></string>-->
+<!--    <string name=""></string>-->
+<!--    <string name=""></string>-->
+<!--    <string name=""></string>-->
+<!--    <string name=""></string>-->
+
+    <string name="in_progress">In-progress</string>
+    <string name="pending">Pending</string>
+    <string name="in_progress_c">In-Progress</string>
+    <string name="delivered">Delivered</string>
+    <string name="cancelled">Cancelled</string>
+    <string name="_6529_22">$6529.22</string>
+    <string name="_123456890">#123456890</string>
+    <string name="eta_2_hours_43_minutes">ETA: 2 Hours 43 Minutes</string>
+    <string name="cancelled_by_driver">Cancelled by driver</string>
+    <string name="delivered_9_jan">Delivered: 9 Jan, 2025 - 05:59 PM</string>
+    <string name="messages">Messages</string>
+    <string name="profile">Profile</string>
+    <string name="email">Email</string>
+    <string name="address">Address</string>
+    <string name="license_number">License Number</string>
+    <string name="out_for_delivery">Out for Delivery</string>
+    <string name="chat_with_admin">Chat with Admin</string>
+    <string name="customer_name">Customer Name</string>
+    <string name="delivery_in_progress">Delivery In-progress</string>
+    <string name="delivery_started">Delivery Started</string>
+</resources>

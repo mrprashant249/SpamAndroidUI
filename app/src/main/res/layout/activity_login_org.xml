@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <!-- Logo Container -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/logo_background"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="12dp">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_folder"
+            app:tint="#FF4444" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="SpamFolder"
+            android:textColor="#FF4444"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <!-- Login Text -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Login"
+        android:textColor="#1A1A1A"
+        android:textSize="28sp" />
+
+    <!-- Phone Number Input -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/edit_text_background"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:text="+1"
+            android:textColor="#1A1A1A"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/phoneNumberInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:background="@null"
+            android:fontFamily="sans-serif"
+            android:hint="12345 67890"
+            android:inputType="phone"
+            android:textColorHint="#CCCCCC"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <!-- Password Input -->
+    <EditText
+        android:id="@+id/passwordInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edit_text_background"
+        android:fontFamily="sans-serif"
+        android:inputType="textPassword"
+        android:padding="16dp"
+        android:text="@string/app_name"
+        android:textSize="16sp" />
+
+    <!-- Login Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/loginButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/button_background"
+        android:text="Login"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+    <!-- Forget Password Text -->
+    <TextView
+        android:id="@+id/forgetPasswordText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif"
+        android:text="Forget Password?"
+        android:textColor="#666666"
+        android:textSize="14sp" />
+
+</LinearLayout> 

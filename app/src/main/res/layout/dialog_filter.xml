@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bottom_sheet_background"
+    android:orientation="vertical"
+    android:paddingHorizontal="@dimen/_16sdp"
+    android:paddingVertical="@dimen/_8sdp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioGroup
+            android:id="@+id/filterGroup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/rbPending"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_38sdp"
+                android:buttonTint="@color/blue_button"
+                android:text="Pending"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp" />
+
+            <RadioButton
+                android:id="@+id/rbInProgress"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_38sdp"
+                android:buttonTint="@color/blue_button"
+                android:checked="true"
+                android:text="In-Progress"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp" />
+
+            <RadioButton
+                android:id="@+id/rbDelivered"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_38sdp"
+                android:buttonTint="@color/blue_button"
+                android:text="Delivered"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp" />
+
+            <RadioButton
+                android:id="@+id/rbCanceled"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_38sdp"
+                android:buttonTint="@color/blue_button"
+                android:text="Cancelled"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp" />
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_38sdp"
+                android:gravity="center"
+                android:text="10"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_38sdp"
+                android:layout_gravity="end"
+                android:gravity="center"
+                android:text="4"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_38sdp"
+                android:layout_gravity="end"
+                android:gravity="center"
+                android:text="2"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_38sdp"
+                android:layout_gravity="end"
+                android:gravity="center"
+                android:text="3"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout> 

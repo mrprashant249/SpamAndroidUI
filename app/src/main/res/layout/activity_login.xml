@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:fitsSystemWindows="true">
+
+    <View
+        android:id="@+id/backgroundTop"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_240sdp"
+        android:layout_alignParentTop="true"
+        android:background="@color/curve_light_blue_bg" />
+
+    <LinearLayout
+        android:id="@+id/logoContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_85sdp"
+        android:background="@drawable/logo_background"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:paddingTop="8dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="8dp">
+
+        <ImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_folder" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/app_name"
+            android:textColor="#000000"
+            android:textSize="@dimen/font_24sp"
+            android:textStyle="bold|italic" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="@dimen/_205sdp"
+        android:background="@drawable/round_curved_background" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/_220sdp"
+        android:background="@android:color/transparent"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/_16sdp"
+        android:paddingTop="42dp">
+
+        <TextView
+            android:id="@+id/tvLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:text="@string/login"
+            android:textColor="#000000"
+            android:textSize="@dimen/font_24sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/llPhoneInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:background="@drawable/edit_text_background"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/_1"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_18sp" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="12dp"
+                android:background="#D3D3D3" />
+
+            <EditText
+                android:id="@+id/etPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:hint="@string/_12345_67890"
+                android:importantForAutofill="no"
+                android:inputType="phone"
+                android:text="@string/_12345_67890"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_18sp" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/edit_text_background"
+            android:hint="@string/password"
+            android:importantForAutofill="no"
+            android:inputType="textPassword"
+            android:padding="@dimen/font_18sp"
+            android:text="@string/password"
+            android:textSize="16sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:text="@string/login"
+            android:textAllCaps="false"
+            android:textSize="@dimen/font_16sp" />
+
+        <TextView
+            android:id="@+id/tvForgotPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:background="@drawable/underline_text"
+            android:text="@string/forget_password"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/font_14sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+</RelativeLayout>

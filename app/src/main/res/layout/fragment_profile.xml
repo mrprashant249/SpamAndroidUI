@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/_16sdp">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/_16sdp">
+
+            <!-- Profile Header -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16sdp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ivProfilePic"
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="@dimen/_80sdp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/profile_male_4"
+                    app:civ_border_color="@color/blue_button"
+                    app:civ_border_width="2dp" />
+
+                <ImageView
+                    android:layout_width="@dimen/_24sdp"
+                    android:layout_height="@dimen/_24sdp"
+                    android:layout_alignEnd="@id/ivProfilePic"
+                    android:layout_alignBottom="@id/ivProfilePic"
+                    android:background="@drawable/circle_black_background"
+                    android:padding="@dimen/_6sdp"
+                    android:src="@drawable/ic_camera" />
+
+                <TextView
+                    android:id="@+id/tvName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ivProfilePic"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:text="Michael Varghese"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16sdp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvPhone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvName"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:text="+1 23456 89504"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="@dimen/_12sdp" />
+
+                <TextView
+                    android:id="@+id/tvJoined"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvPhone"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:text="Joined 12 Dec, 2024"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="@dimen/_12sdp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvJoined"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:background="@drawable/suspended_background"
+                    android:paddingHorizontal="@dimen/_12sdp"
+                    android:paddingVertical="@dimen/_4sdp"
+                    android:text="Suspended"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12sdp" />
+            </RelativeLayout>
+
+
+            <!-- Information Items -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_6sdp"
+                android:layout_marginVertical="@dimen/_8sdp"
+                android:background="@drawable/full_name_background"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/_8sdp">
+
+                <!-- Information Section -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:text="Information"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="bold" />
+
+                <!-- Full Name -->
+                <LinearLayout style="@style/ProfileInfoItem">
+
+                    <TextView
+                        style="@style/ProfileInfoLabel"
+                        android:text="Full Name" />
+
+                    <TextView
+                        style="@style/ProfileInfoValue"
+                        android:text="Michael Varghese" />
+                </LinearLayout>
+
+                <View style="@style/ProfileDivider" />
+
+                <!-- Phone Number -->
+                <LinearLayout style="@style/ProfileInfoItem">
+
+                    <TextView
+                        style="@style/ProfileInfoLabel"
+                        android:text="Phone Number" />
+
+                    <TextView
+                        style="@style/ProfileInfoValue"
+                        android:text="+1 7685674653" />
+                </LinearLayout>
+
+                <View style="@style/ProfileDivider" />
+                <!-- Email Address -->
+                <LinearLayout style="@style/ProfileInfoItem">
+
+                    <TextView
+                        style="@style/ProfileInfoLabel"
+                        android:text="Email Address" />
+
+                    <TextView
+                        style="@style/ProfileInfoValue"
+                        android:text="John456@gmail.com" />
+                </LinearLayout>
+
+                <View style="@style/ProfileDivider" />
+                <!-- Driving License No. -->
+                <LinearLayout style="@style/ProfileInfoItem">
+
+                    <TextView
+                        style="@style/ProfileInfoLabel"
+                        android:text="Driving License No." />
+
+                    <TextView
+                        style="@style/ProfileInfoValue"
+                        android:text="DL-0420110149XXXX" />
+                </LinearLayout>
+
+                <View style="@style/ProfileDivider" />
+                <!-- Age -->
+                <LinearLayout style="@style/ProfileInfoItem">
+
+                    <TextView
+                        style="@style/ProfileInfoLabel"
+                        android:text="Age" />
+
+                    <TextView
+                        style="@style/ProfileInfoValue"
+                        android:text="26 Years" />
+                </LinearLayout>
+
+                <View style="@style/ProfileDivider" />
+                <!-- Working Time -->
+                <LinearLayout style="@style/ProfileInfoItem">
+
+                    <TextView
+                        style="@style/ProfileInfoLabel"
+                        android:text="Working Time" />
+
+                    <TextView
+                        style="@style/ProfileInfoValue"
+                        android:text="09:00 to 17:00 (Wed, Tue Off)" />
+                </LinearLayout>
+
+                <View style="@style/ProfileDivider" />
+                <!-- Address -->
+                <LinearLayout
+                    style="@style/ProfileInfoItem"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/ProfileInfoLabel"
+                        android:text="Address" />
+
+                    <TextView
+                        style="@style/ProfileInfoValue"
+                        android:layout_width="wrap_content"
+                        android:text="1833 Bel Meadow Drive, Bentley, Toronto 92335, Canada" />
+                </LinearLayout>
+
+                <View style="@style/ProfileDivider" />
+                <!-- Area Code -->
+                <LinearLayout style="@style/ProfileInfoItem">
+
+                    <TextView
+                        style="@style/ProfileInfoLabel"
+                        android:text="Area Code" />
+
+                    <TextView
+                        style="@style/ProfileInfoValue"
+                        android:text="CA0001" />
+                </LinearLayout>
+
+                <View style="@style/ProfileDivider" />
+                <!-- Selected City for Delivery -->
+                <LinearLayout
+                    style="@style/ProfileInfoItem"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/ProfileInfoLabel"
+                        android:text="Selected City for Delivery" />
+
+                    <TextView
+                        style="@style/ProfileInfoValue"
+                        android:layout_width="wrap_content"
+                        android:text="Pickering, Oshawa, Oakville, Acton, Brampton" />
+                </LinearLayout>
+
+                <View style="@style/ProfileDivider" />
+                <!-- Joined on -->
+                <LinearLayout style="@style/ProfileInfoItem">
+
+                    <TextView
+                        style="@style/ProfileInfoLabel"
+                        android:text="Joined on" />
+
+                    <TextView
+                        style="@style/ProfileInfoValue"
+                        android:text="Dec 12, 2024" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Logout Button -->
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLogout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginBottom="@dimen/_16sdp"
+                android:text="Logout"
+                android:textAllCaps="false"
+                android:textSize="@dimen/font_16sp" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout> 

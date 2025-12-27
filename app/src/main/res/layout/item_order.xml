@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/_6sdp"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/order_history_background"
+        android:foreground="?attr/selectableItemBackground"
+        android:orientation="horizontal"
+        android:padding="@dimen/_8sdp">
+
+        <ImageView
+            android:id="@+id/icLocation"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:src="@drawable/ic_location" />
+
+        <LinearLayout
+            android:id="@+id/orderLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_6sdp"
+            android:layout_toEndOf="@+id/icLocation"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvOrderId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="#01542154"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11sdp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvAmount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:text="$6529.92"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11sdp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:background="@drawable/bg_status_pending"
+                    android:paddingHorizontal="@dimen/_8sdp"
+                    android:paddingVertical="@dimen/_2sdp"
+                    android:text="@string/pending"
+                    android:textColor="@color/blue_button"
+                    android:textSize="@dimen/_9sdp"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/tvEta"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:text="ETA: 2 h 43 m"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="@dimen/_10sdp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/orderLayout"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:text="1725 Pure Springs Blvd., Pickering, ON L1X 0C4, Canada"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_11sdp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:background="@color/divider"
+        android:visibility="gone" />
+</LinearLayout> 
